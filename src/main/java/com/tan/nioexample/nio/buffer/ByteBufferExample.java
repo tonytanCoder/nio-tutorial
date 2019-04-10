@@ -11,34 +11,19 @@ public class ByteBufferExample {
 		 */
 		ByteBuffer buffer=ByteBuffer.allocate(1024);
 		/**
-		 * 存取
+		 * 上界:缓冲区的第一个不能被读或写的元素。或者说，缓冲区中现存元素的计数。
 		 */
-		String str=new String("tanzl");
-		System.out.println(str.getBytes().length);
-		buffer.put(str.getBytes());
-		System.out.println(buffer.position());
-		System.out.println(buffer.limit());
+		buffer.limit();
 		
-		buffer.flip();
-		System.out.println((char)buffer.get());
-		
-		System.out.println((char)buffer.get(0));
-		/*buffer.put((byte)'H').put((byte)'e').put((byte)'l').put((byte)'l').put((byte)'o');*/
-		buffer.rewind();
 		/**
-		 * Limit =不得读取或写入的元素的索引。
+		 * 位置（Position）:下一个要被读或写的元素的索引。位置会自动由相应的get( )和put( )函数更新。
 		 */
-		System.out.println(buffer.limit());
+		buffer.position();
 		/**
-		 * Position =要读取或写入的下一个元素的索引。
+		 * 标记（Mark）:一个备忘位置。调用mark( )来设定mark = postion。调用reset( )设定position = mark。标记在设定前是未定义的(undefined)。
+		 * 
 		 */
-		System.out.println(buffer.position());
-        System.out.println((char)buffer.get());
-		
-		System.out.println((char)buffer.get(0));
-		buffer.clear();
-		System.out.println(buffer.limit());
-		System.out.println(buffer.position());
+		buffer.mark();
 	}
 	
 }
