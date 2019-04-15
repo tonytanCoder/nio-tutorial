@@ -3,7 +3,6 @@ package com.tan.nioexample.nio.channel;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
-import java.nio.channels.Selector;
 
 public class FileChannelExample {
  public static void main(String[] args) throws IOException {
